@@ -27,7 +27,7 @@
         <nav class="nav">
           <a class="logo" lang="en" href="./index.html"><span class="accent">Web</span>Studio</a>
           <ul class="nav-list list">
-            <li class="item"><a class="link curent" href="./index.html">Студія</a></li>
+            <li class="item"><a class="link current" href="./index.html">Студія</a></li>
             <li class="item"><a class="link" href="./portfolio.html">Портфоліо</a></li>
             <li class="item"><a class="link" href="#">Контакти</a></li>
           </ul>
@@ -436,25 +436,40 @@
         <form class="form" autocomplete="on">
           <div class="form-group">
             <p class="modal-title">Залиште свої дані, ми вам передзвонимо</p>
-            <label class="label" for="name">Ім'я</label>
-            <input class="input" type="text" name="name" id="name" />
+            <div class="form-field">
+              <label class="label" for="name">Ім'я</label>
+              <input class="input" type="text" name="name" id="name" />
+              <svg class="icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
 
-            <label class="label" for="user_phone">Телефон</label>
-            <input class="input" type="tel" name="phone" id="user_phone" />
-
-            <label class="label" for="modal_user_email">Пошта</label>
-            <input class="input" type="email" name="email" id="modal_user_email" />
-
-            <label class="label" for="comment">Коментар</label>
-            <textarea
-              class="modal-textaria input"
-              name="comment"
-              rows="5"
-              placeholder="Введіть текст"
-              id="comment"
-            ></textarea>
+            <div class="form-field">
+              <label class="label" for="user_phone">Телефон</label>
+              <input class="input" type="tel" name="phone" id="user_phone" />
+              <svg class="icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-phone-black"></use>
+              </svg>
+            </div>
+            <div class="form-field">
+              <label class="label" for="modal_user_email">Пошта</label>
+              <input class="input" type="email" name="email" id="modal_user_email" />
+              <svg class="icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-email-black"></use>
+              </svg>
+            </div>
+            <div class="form-field">
+              <label class="label" for="comment">Коментар</label>
+              <textarea
+                class="modal-textaria input"
+                name="comment"
+                rows="5"
+                placeholder="Введіть текст"
+                id="comment"
+              ></textarea>
+            </div>
           </div>
-          <div class="form-field">
+          <div class="form-field-policy">
             <input
               class="check"
               type="checkbox"

@@ -11,7 +11,7 @@
     --header-border-color: #ececec;
     --socials-bg: #AFB1B8;
     --footer-communication-color: rgba(255, 255, 255, .6);
-    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -130,7 +130,7 @@ button {
     line-height: 1.14;
     font-weight: 500;
     color: var(--title-text-color);
-    transition: color 250ms var(--timing-function);
+    transition: color var(--timing-function);
 }
 
 .nav-list .link:hover,
@@ -138,13 +138,12 @@ button {
     color: var(--accent-color);
 }
 
-.link.curent {
+.link.current {
     position: relative;
     color: var(--accent-color);
 }
 
-.link.curent::after {
-    display: block;
+.link.current::after {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -180,7 +179,7 @@ button {
     font-weight: 500;
     color: var(--primary-text-color);
     text-decoration: none;
-    transition: color 250ms var(--timing-function);
+    transition: color var(--timing-function);
 }
 
 .contact .link:hover,
@@ -221,7 +220,7 @@ button {
 .hero .button {
     display: inline-block;
     padding: 10px 32px;
-
+    cursor: pointer;
     min-width: 216px;
     text-align: center;
     font-family: inherit;
@@ -230,7 +229,7 @@ button {
     background-color: var(--accent-color);
     border-radius: 4px;
     border: none;
-    transition: background-color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+    transition: background-color var(--timing-function), box-shadow var(--timing-function);
 }
 
 .button:hover,
@@ -393,7 +392,7 @@ button {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    transition: background-color 250ms var(--timing-function);
+    transition: background-color var(--timing-function);
 }
 
 .socials-link:hover,
@@ -403,7 +402,7 @@ button {
 
 .socials .icon {
     fill: var(--socials-bg);
-    transition: fill 250ms var(--timing-function);
+    transition: fill var(--timing-function);
 }
 
 .socials-link:hover .icon,
@@ -443,8 +442,8 @@ button {
     color: var(--socials-bg);
     border: 1px solid var(--socials-bg);
     border-radius: 4px;
-    transition: color 250ms var(--timing-function),
-        border 250ms var(--timing-function);
+    transition: color var(--timing-function),
+        border var(--timing-function);
 }
 
 .client .link:hover,
@@ -483,7 +482,7 @@ button {
 }
 
 .footer .link {
-    transition: color 250ms var(--timing-function);
+    transition: color var(--timing-function);
 }
 
 .footer .link:hover,
@@ -523,7 +522,7 @@ button {
 
 .footer-socials .socials-link {
     background-color: rgba(255, 255, 255, .1);
-    transition: background-color 250ms var(--timing-function);
+    transition: background-color var(--timing-function);
 }
 
 .footer-socials .socials-link:hover,
@@ -562,7 +561,7 @@ button {
     border-radius: 4px;
     border: none;
     background-color: var(--portfolio-bg-btn-color);
-    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+    transition: background-color var(--timing-function), color var(--timing-function), box-shadow var(--timing-function);
 }
 
 .project .button:hover,
@@ -585,7 +584,7 @@ button {
 /* ----------------EXAMPLES------------------- */
 
 .examples .link {
-    transition: box-shadow 250ms var(--timing-function);
+    transition: box-shadow var(--timing-function);
 }
 
 .examples .link:hover,
@@ -612,7 +611,7 @@ button {
     height: 100%;
     background-color: rgba(33, 150, 243, 0.9);
     transform: translateY(101%);
-    transition: transform 250ms var(--timing-function);
+    transition: transform var(--timing-function);
 }
 
 .link:hover .overlay,
@@ -667,7 +666,7 @@ button {
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
     opacity: 1;
-    transition: opacity 250ms var(--timing-function);
+    transition: opacity var(--timing-function);
 }
 
 .backdrop.is-hidden .modal {
@@ -685,7 +684,7 @@ button {
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transform: scale(1) translate(-50%, -50%);
-    transition: transform 250ms var(--timing-function);
+    transition: transform var(--timing-function);
 }
 
 .modal .close {
@@ -701,8 +700,7 @@ button {
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
+
     margin-bottom: 20px;
 }
 
@@ -715,10 +713,6 @@ button {
     color: var(--title-text-color);
 }
 
-.modal-textaria {
-    resize: none;
-}
-
 .form-group .label {
     margin-bottom: 4px;
     font-weight: 400;
@@ -727,25 +721,64 @@ button {
     letter-spacing: 0.01em;
 }
 
-.form-group .input {
-    margin-bottom: 10px;
-    padding: 11px 12px;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    transition: border 250ms var(--timing-function);
+.form-field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
-.form-group .input:hover,
-.form-group .input:focus {
+.form-field .input {
+
+    margin-bottom: 10px;
+    padding: 11px 30px;
+    width: 448px;
+    height: 40px;
+    outline: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    fill: var(--accent-color);
+    border-radius: 4px;
+    transition: border var(--timing-function);
+}
+
+.form-field .input:hover,
+.form-field .input:focus {
     border: 1px solid var(--accent-color);
+}
+
+.form-field .modal-textaria {
+    padding: 12px 16px;
+    height: 120px;
+    resize: none;
+}
+
+.form-field .icon {
+    position: absolute;
+    top: 29px;
+    left: 12px;
+    display: inline-block;
+    fill: var(--title-text-color);
+    transition: fill var(--timing-function);
+}
+
+.form-field .input:hover~.icon,
+.form-field .input:focus~.icon {
+    fill: var(--accent-color);
 }
 
 .form .check {}
 
 .label-policy {}
 
+.form-field-policy {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 34px;
+}
+
 .modal-btn {
+    display: block;
     cursor: pointer;
+    margin: 0 auto;
     padding: 10px 52px;
     font-weight: 700;
     font-size: 16px;
@@ -753,12 +786,15 @@ button {
     letter-spacing: 0.06em;
 
     color: var(--primary-color);
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: none;
+    transition: background-color var(--timing-function), box-shadow var(--timing-function);
 }
 
-.form-field {
-    margin-bottom: 34px;
+.modal-btn:hover,
+.modal-btn:focus {
+    background-color: var(--hero-btn-active);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
