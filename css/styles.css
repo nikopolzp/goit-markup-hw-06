@@ -746,6 +746,7 @@ button {
 }
 
 .form-field .modal-textaria {
+    margin-bottom: 0;
     padding: 12px 16px;
     height: 120px;
     resize: none;
