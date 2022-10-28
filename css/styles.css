@@ -699,12 +699,13 @@ button {
     border-radius: 50%;
 }
 
+/* ----------------FORM---------------- */
+
 .form-group {
-    display: grid;
     margin-bottom: 30px;
 }
 
-.modal-title {
+.FORM-title {
     margin-bottom: 12px;
     font-weight: 700;
     font-size: 20px;
@@ -782,7 +783,7 @@ button {
 .form-field-policy {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto;
     margin-top: 20px;
 }
